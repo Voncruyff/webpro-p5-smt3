@@ -1,17 +1,19 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
-const Button = ({ variant, children, ...props }) => {
+const Button = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { children, variant = "bg-black" } = props;
   return (
     <button
       className={`h-10 px-6 font-semibold rounded-md ${variant} text-white hover:bg-black`}
-      type={props.type || "button"}
-      {...props} // Menyebarkan properti tambahan
+      type="submit"
     >
       {children}
     </button>
   );
 };
+
 
 export default function App() {
   return (
